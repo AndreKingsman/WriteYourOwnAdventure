@@ -22,7 +22,26 @@ When you play your adventure, you start at the first scenario. Depending on your
 
 ## Structure of the program
 
-The ```c main()``` function
+The ```main()``` function only prints introductory text and brings the user to the main menu with ```main_menu()```. The program is divided into several functions that implement all the features. Given that most functions operate on a shared set of variables, most variables are defined globally above the ```main()``` function.
 
 ## Ideas for further development
 
+1. Expand the tutorial
+
+The story for the tutorial is not finished yet. The tutorial should eventually also serve the purpose of explaining Create Mode in more detail and providing more opportunities for user interaction.
+
+2. Implement a text parser, character stats and items
+
+
+```C
+void parse_text(char *text) {
+
+  for (int c = 0; text[c]; ++c) {
+    if (text[c] == '[') {
+      while (text[c] != ']') ++c;
+      ++c;
+    }
+    printf("%c", text[c]);
+  }
+}
+``` 
