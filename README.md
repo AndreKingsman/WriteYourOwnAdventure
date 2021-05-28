@@ -60,7 +60,7 @@ The adventure could be made more dynamic by introducing combat encounters throug
 
 At each point that the user inputs text, there is the possibility that the user inputs an invalid option. The program should continue functioning as intended and notify the user of the fact. In most but not all situations exception handling has been implemented.
 
-In the main menu, for example, the user is informed if their input does not correspond to any of the valid options:
+In the main menu the user is informed if their input does not correspond to any of the valid options:
 ```C
   while (1) {
     fgets(user_input, max_len_user_input, stdin);
@@ -78,7 +78,7 @@ In the main menu, for example, the user is informed if their input does not corr
     else printf("Invalid input. Please enter either \"1\" to navigate to the tutorial, \"2\" to enter Create Mode, or \"3\" to play your adventure. Enter \"0\" to exit the program.\n");
   }
 ```
-However, when the user is in Create Mode, exceptions are not sufficiently dealt with since the user can edit scenarios to which there exist no links yet, or input non-integer characters:
+However, when the user is, for example, in Create Mode, exceptions are not sufficiently dealt with since the user can edit scenarios to which there exist no links yet, or input non-integer characters:
 ```C
   while (1) {
     printf("Select which scenario you would like to edit next. You can get an overview of what you have writen so far by entering \"s\" to bring up the summary. Input \"0\" to return to the main menu.\n");
