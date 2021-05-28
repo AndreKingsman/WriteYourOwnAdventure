@@ -76,3 +76,18 @@ In the main menu, for example, the user is informed if their input does not corr
     else printf("Invalid input. Please enter either \"1\" to navigate to the tutorial, \"2\" to enter Create Mode, or \"3\" to play your adventure. Enter \"0\" to exit the program.\n");
   }
 ```
+However, when the user is in Create Mode, exceptions are not sufficiently dealt with since the user can edit scenarios to which there exist no links yet, or input non-integer characters:
+```C
+  while (1) {
+    printf("Select which scenario you would like to edit next. You can get an overview of what you have writen so far by entering \"s\" to bring up the summary. Input \"0\" to return to the main menu.\n");
+    fgets(user_input, max_len_user_input, stdin);
+    user_input[strlen(user_input) - 1] = 0;
+    if (user_input[0] == '0') main_menu();
+    else if (user_input[0] == 's') print_summary();
+    else {
+      /* change current_link to user_input. Subtract one to return the correct index */
+      current_link = user_input[0] - '0' - 1;
+      write_scenario();
+    }
+  }
+```
