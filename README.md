@@ -8,7 +8,7 @@ Create and play your very own choose your own adventure stories
 
 ## Overview
 
-As the name suggests, Write Your Own Adventure is a console application written in C that allows you to write and play your own choose your own adventure stories. As of now, the program features a short tutorial that demos how an adventure plays, Create Mode, and the ability for you to play through the adventure you created.
+As the name suggests, Write Your Own Adventure is a console application written in C that allows you to write and play your own choose your own adventure stories. As of now, the program features a short tutorial (not yet implemented) that demos how an adventure plays, Create Mode, and the ability for you to play through the adventure you created.
 
 The entire program is self-contained in main.c
 
@@ -26,13 +26,13 @@ The ```main()``` function only prints introductory text and brings the user to t
 
 ## Ideas for further development
 
-1. Expand the tutorial
+1. Write the tutorial
 
 The story for the tutorial is not finished yet. The tutorial should eventually also serve the purpose of explaining Create Mode in more detail and providing more opportunities for user interaction.
 
 2. Implement a text parser, character stats and items
 
-
+Character stats (e.g., strength, vitality, dexterity, intelligence etc.) could be used to present unique options to players based on their stats. Items could also be found throughout the adventure that could be used for various purposes during the adventure. A custom text parser would be used to allow the user to write custom scripts as part of their scenario descriptions of options. These would be hidden from the player, unless they satisfy the specified conditions. This would allow for more variation in how the adventures play out.
 
 Here is a first draft of what the parser might look like:
 ```C
@@ -53,6 +53,8 @@ void parse_text(char *text) {
 The parser should also copy the text in between the brackets and evaluate it based on defined syntax. Such a parser would allow the user to, for example, hide text from the player unless their character possesses a specific item or character stat.
 
 3. Implement combat encounters
+
+The adventure could be made more dynamic by introducing combat encounters through, for instance, dice combat. If items are implemented, the player could use items with various effects to improve their chances of success in battle.
 
 4. Improve exception handling
 
