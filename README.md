@@ -22,7 +22,7 @@ When you play your adventure, you start at the first scenario. Depending on your
 
 ## Structure of the program
 
-The ’’’c main’’’ function
+The ```c main()``` function
 
 ## Ideas for further development
 
