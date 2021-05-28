@@ -54,3 +54,25 @@ The parser should also copy the text in between the brackets and evaluate it bas
 
 3. Implement combat encounters
 
+4. Improve exception handling
+
+At each point that the user inputs text, there is the possibility that the user inputs an invalid option. The program should continue functioning as intended and notify the user of the fact. In most but not all situations exception handling has been implemented.
+
+In the main menu, for example, the user is informed if their input does not correspond to any of the valid options:
+```C
+  while (1) {
+    fgets(user_input, max_len_user_input, stdin);
+    user_input[strlen(user_input) - 1] = 0;
+    if (user_input[0] == '1') play_tutorial();
+    else if (user_input[0] == '2') create_mode();
+    else if (user_input[0] == '3') {
+      if (*scenarios[0]) play_adventure();
+      else printf("No adventure exists yet.\n");
+    }
+    else if (user_input[0] == '0') {
+      printf("Goodbye!");
+      exit(0);
+    }
+    else printf("Invalid input. Please enter either \"1\" to navigate to the tutorial, \"2\" to enter Create Mode, or \"3\" to play your adventure. Enter \"0\" to exit the program.\n");
+  }
+```
