@@ -32,16 +32,25 @@ The story for the tutorial is not finished yet. The tutorial should eventually a
 
 2. Implement a text parser, character stats and items
 
+
+
 Here is a first draft of what the parser might look like:
 ```C
 void parse_text(char *text) {
 
   for (int c = 0; text[c]; ++c) {
+    /* if a defined character like an open square [ or curly { bracket is reached, stop printing characters */
     if (text[c] == '[') {
+      /* skip characters until the reciprocal closed bracket is reached */
       while (text[c] != ']') ++c;
       ++c;
     }
+    /* otherwise print the input character by character */
     printf("%c", text[c]);
   }
 }
-``` 
+```
+The parser should also copy the text in between the brackets and evaluate it based on defined syntax. Such a parser would allow the user to, for example, hide text from the player unless their character possesses a specific item or character stat.
+
+3. Implement combat encounters
+
