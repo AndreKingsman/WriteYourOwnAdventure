@@ -32,7 +32,7 @@ The story for the tutorial is not finished yet. The tutorial should eventually a
 
 2. Implement a text parser, character stats and items
 
-
+Here is a first draft of what the parser might look like:
 ```C
 void parse_text(char *text) {
 
